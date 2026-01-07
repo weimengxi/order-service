@@ -1,0 +1,55 @@
+# order-service 开发环境（支持热重载）
+version: '3.8'
+
+services:
+  order-service:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: order-service-dev
+    environment:
+      - CONFIG_FILE=/app/configs/config.dev.yaml
+      - GIN_MODE=debug
+    volumes:
+      - .:/app
+    ports:
+      - "8002:8002"
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - order-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8002/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  postgres:
+    image: postgres:14-alpine
+    container_name: order-postgres-dev
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=orders
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+    networks:
+      - order-network
+
+  redis:
+    image: redis:7-alpine
+    container_name: order-redis-dev
+    ports:
+      - "6380:6379"
+    networks:
+      - order-network
+
+volumes:
+  postgres_data:
+
+networks:
+  order-network:
+    driver: bridge

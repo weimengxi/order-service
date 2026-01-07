@@ -1,0 +1,26 @@
+# configs/config.dev.yaml (远程开发环境 - Docker)
+server:
+  port: "8002"
+  base_path: "/api/v3"
+  environment: "development"
+
+swagger:
+  enabled: true
+  title: "Order Service API"
+  version: "3.0.0"
+  description: "订单管理服务 v3 - 开发环境"
+  host: "dev.api.company.com"
+  schemes: ["https"]
+
+database:
+  host: "postgres"
+  port: 5432
+  name: "orders"
+  user: "postgres"
+  password: "postgres"
+
+redis:
+  host: "redis"
+  port: 6379
+  password: ""
+  db: 0

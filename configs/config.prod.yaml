@@ -1,0 +1,26 @@
+# configs/config.prod.yaml (生产环境 - K8s)
+server:
+  port: "8002"
+  base_path: "/api/v3"
+  environment: "production"
+
+swagger:
+  enabled: false
+  title: "Order Service API"
+  version: "3.0.0"
+  description: "订单管理服务 v3"
+  host: "api.company.com"
+  schemes: ["https"]
+
+database:
+  host: "postgres.internal.svc.cluster.local"
+  port: 5432
+  name: "orders"
+  user: "postgres"
+  password: "${DB_PASSWORD}"
+
+redis:
+  host: "redis.internal.svc.cluster.local"
+  port: 6379
+  password: "${REDIS_PASSWORD}"
+  db: 0
