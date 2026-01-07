@@ -100,13 +100,13 @@
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_my-org_order-service_internal_model.Response"
+                                    "$ref": "#/definitions/order-service_internal_model.Response"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_my-org_order-service_internal_model.OrderListResponse"
+                                            "$ref": "#/definitions/order-service_internal_model.OrderListResponse"
                                         }
                                     }
                                 }
@@ -116,7 +116,7 @@
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_my-org_order-service_internal_model.ErrorResponse"
+                            "$ref": "#/definitions/order-service_internal_model.ErrorResponse"
                         }
                     }
                 }
@@ -145,7 +145,7 @@
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_my-org_order-service_internal_model.CreateOrderRequest"
+                            "$ref": "#/definitions/order-service_internal_model.CreateOrderRequest"
                         }
                     }
                 ],
@@ -155,13 +155,13 @@
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_my-org_order-service_internal_model.Response"
+                                    "$ref": "#/definitions/order-service_internal_model.Response"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_my-org_order-service_internal_model.Order"
+                                            "$ref": "#/definitions/order-service_internal_model.Order"
                                         }
                                     }
                                 }
@@ -171,7 +171,7 @@
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_my-org_order-service_internal_model.ErrorResponse"
+                            "$ref": "#/definitions/order-service_internal_model.ErrorResponse"
                         }
                     }
                 }
@@ -201,13 +201,13 @@
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_my-org_order-service_internal_model.Response"
+                                    "$ref": "#/definitions/order-service_internal_model.Response"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_my-org_order-service_internal_model.OrderStatistics"
+                                            "$ref": "#/definitions/order-service_internal_model.OrderStatistics"
                                         }
                                     }
                                 }
@@ -250,13 +250,13 @@
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_my-org_order-service_internal_model.Response"
+                                    "$ref": "#/definitions/order-service_internal_model.Response"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_my-org_order-service_internal_model.Order"
+                                            "$ref": "#/definitions/order-service_internal_model.Order"
                                         }
                                     }
                                 }
@@ -266,7 +266,7 @@
                     "404": {
                         "description": "Not Found",
                         "schema": {
-                            "$ref": "#/definitions/github_com_my-org_order-service_internal_model.ErrorResponse"
+                            "$ref": "#/definitions/order-service_internal_model.ErrorResponse"
                         }
                     }
                 }
@@ -305,13 +305,13 @@
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_my-org_order-service_internal_model.Response"
+                                    "$ref": "#/definitions/order-service_internal_model.Response"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_my-org_order-service_internal_model.Order"
+                                            "$ref": "#/definitions/order-service_internal_model.Order"
                                         }
                                     }
                                 }
@@ -321,13 +321,13 @@
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_my-org_order-service_internal_model.ErrorResponse"
+                            "$ref": "#/definitions/order-service_internal_model.ErrorResponse"
                         }
                     },
                     "404": {
                         "description": "Not Found",
                         "schema": {
-                            "$ref": "#/definitions/github_com_my-org_order-service_internal_model.ErrorResponse"
+                            "$ref": "#/definitions/order-service_internal_model.ErrorResponse"
                         }
                     }
                 }
@@ -365,7 +365,7 @@
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_my-org_order-service_internal_model.UpdateOrderStatusRequest"
+                            "$ref": "#/definitions/order-service_internal_model.UpdateOrderStatusRequest"
                         }
                     }
                 ],
@@ -375,13 +375,13 @@
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_my-org_order-service_internal_model.Response"
+                                    "$ref": "#/definitions/order-service_internal_model.Response"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_my-org_order-service_internal_model.Order"
+                                            "$ref": "#/definitions/order-service_internal_model.Order"
                                         }
                                     }
                                 }
@@ -391,13 +391,13 @@
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_my-org_order-service_internal_model.ErrorResponse"
+                            "$ref": "#/definitions/order-service_internal_model.ErrorResponse"
                         }
                     },
                     "404": {
                         "description": "Not Found",
                         "schema": {
-                            "$ref": "#/definitions/github_com_my-org_order-service_internal_model.ErrorResponse"
+                            "$ref": "#/definitions/order-service_internal_model.ErrorResponse"
                         }
                     }
                 }
@@ -405,7 +405,7 @@
         }
     },
     "definitions": {
-        "github_com_my-org_order-service_internal_model.Address": {
+        "order-service_internal_model.Address": {
             "type": "object",
             "properties": {
                 "city": {
@@ -438,7 +438,7 @@
                 }
             }
         },
-        "github_com_my-org_order-service_internal_model.CreateAddressRequest": {
+        "order-service_internal_model.CreateAddressRequest": {
             "type": "object",
             "required": [
                 "city",
@@ -479,7 +479,7 @@
                 }
             }
         },
-        "github_com_my-org_order-service_internal_model.CreateOrderItem": {
+        "order-service_internal_model.CreateOrderItem": {
             "type": "object",
             "required": [
                 "product_id",
@@ -497,7 +497,7 @@
                 }
             }
         },
-        "github_com_my-org_order-service_internal_model.CreateOrderRequest": {
+        "order-service_internal_model.CreateOrderRequest": {
             "type": "object",
             "required": [
                 "address",
@@ -506,13 +506,13 @@
             ],
             "properties": {
                 "address": {
-                    "$ref": "#/definitions/github_com_my-org_order-service_internal_model.CreateAddressRequest"
+                    "$ref": "#/definitions/order-service_internal_model.CreateAddressRequest"
                 },
                 "items": {
                     "type": "array",
                     "minItems": 1,
                     "items": {
-                        "$ref": "#/definitions/github_com_my-org_order-service_internal_model.CreateOrderItem"
+                        "$ref": "#/definitions/order-service_internal_model.CreateOrderItem"
                     }
                 },
                 "user_id": {
@@ -521,7 +521,7 @@
                 }
             }
         },
-        "github_com_my-org_order-service_internal_model.ErrorResponse": {
+        "order-service_internal_model.ErrorResponse": {
             "type": "object",
             "properties": {
                 "code": {
@@ -538,7 +538,7 @@
                 }
             }
         },
-        "github_com_my-org_order-service_internal_model.Order": {
+        "order-service_internal_model.Order": {
             "type": "object",
             "properties": {
                 "created_at": {
@@ -556,7 +556,7 @@
                 "items": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/github_com_my-org_order-service_internal_model.OrderItem"
+                        "$ref": "#/definitions/order-service_internal_model.OrderItem"
                     }
                 },
                 "paid_at": {
@@ -564,7 +564,7 @@
                     "example": "2024-01-01T01:00:00Z"
                 },
                 "shipping_address": {
-                    "$ref": "#/definitions/github_com_my-org_order-service_internal_model.Address"
+                    "$ref": "#/definitions/order-service_internal_model.Address"
                 },
                 "status": {
                     "type": "string",
@@ -591,7 +591,7 @@
                 }
             }
         },
-        "github_com_my-org_order-service_internal_model.OrderItem": {
+        "order-service_internal_model.OrderItem": {
             "type": "object",
             "properties": {
                 "product_id": {
@@ -616,13 +616,13 @@
                 }
             }
         },
-        "github_com_my-org_order-service_internal_model.OrderListResponse": {
+        "order-service_internal_model.OrderListResponse": {
             "type": "object",
             "properties": {
                 "orders": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/github_com_my-org_order-service_internal_model.Order"
+                        "$ref": "#/definitions/order-service_internal_model.Order"
                     }
                 },
                 "page": {
@@ -639,7 +639,7 @@
                 }
             }
         },
-        "github_com_my-org_order-service_internal_model.OrderStatistics": {
+        "order-service_internal_model.OrderStatistics": {
             "type": "object",
             "properties": {
                 "cancelled_orders": {
@@ -664,7 +664,7 @@
                 }
             }
         },
-        "github_com_my-org_order-service_internal_model.Response": {
+        "order-service_internal_model.Response": {
             "type": "object",
             "properties": {
                 "code": {
@@ -678,7 +678,7 @@
                 }
             }
         },
-        "github_com_my-org_order-service_internal_model.UpdateOrderStatusRequest": {
+        "order-service_internal_model.UpdateOrderStatusRequest": {
             "type": "object",
             "required": [
                 "status"
