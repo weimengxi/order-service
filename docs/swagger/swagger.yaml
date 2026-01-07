@@ -1,6 +1,6 @@
 basePath: /api/v3
 definitions:
-  github_com_my-org_order-service_internal_model.Address:
+  order-service_internal_model.Address:
     properties:
       city:
         example: 深圳市
@@ -24,7 +24,7 @@ definitions:
         example: "518000"
         type: string
     type: object
-  github_com_my-org_order-service_internal_model.CreateAddressRequest:
+  order-service_internal_model.CreateAddressRequest:
     properties:
       city:
         example: 深圳市
@@ -55,7 +55,7 @@ definitions:
     - province
     - street
     type: object
-  github_com_my-org_order-service_internal_model.CreateOrderItem:
+  order-service_internal_model.CreateOrderItem:
     properties:
       product_id:
         example: 100
@@ -68,13 +68,13 @@ definitions:
     - product_id
     - quantity
     type: object
-  github_com_my-org_order-service_internal_model.CreateOrderRequest:
+  order-service_internal_model.CreateOrderRequest:
     properties:
       address:
-        $ref: '#/definitions/github_com_my-org_order-service_internal_model.CreateAddressRequest'
+        $ref: '#/definitions/order-service_internal_model.CreateAddressRequest'
       items:
         items:
-          $ref: '#/definitions/github_com_my-org_order-service_internal_model.CreateOrderItem'
+          $ref: '#/definitions/order-service_internal_model.CreateOrderItem'
         minItems: 1
         type: array
       user_id:
@@ -85,7 +85,7 @@ definitions:
     - items
     - user_id
     type: object
-  github_com_my-org_order-service_internal_model.ErrorResponse:
+  order-service_internal_model.ErrorResponse:
     properties:
       code:
         example: 400
@@ -97,7 +97,7 @@ definitions:
         example: Bad Request
         type: string
     type: object
-  github_com_my-org_order-service_internal_model.Order:
+  order-service_internal_model.Order:
     properties:
       created_at:
         example: "2024-01-01T00:00:00Z"
@@ -110,13 +110,13 @@ definitions:
         type: string
       items:
         items:
-          $ref: '#/definitions/github_com_my-org_order-service_internal_model.OrderItem'
+          $ref: '#/definitions/order-service_internal_model.OrderItem'
         type: array
       paid_at:
         example: "2024-01-01T01:00:00Z"
         type: string
       shipping_address:
-        $ref: '#/definitions/github_com_my-org_order-service_internal_model.Address'
+        $ref: '#/definitions/order-service_internal_model.Address'
       status:
         enum:
         - pending
@@ -136,7 +136,7 @@ definitions:
         example: 1
         type: integer
     type: object
-  github_com_my-org_order-service_internal_model.OrderItem:
+  order-service_internal_model.OrderItem:
     properties:
       product_id:
         example: 100
@@ -154,11 +154,11 @@ definitions:
         example: 7999
         type: number
     type: object
-  github_com_my-org_order-service_internal_model.OrderListResponse:
+  order-service_internal_model.OrderListResponse:
     properties:
       orders:
         items:
-          $ref: '#/definitions/github_com_my-org_order-service_internal_model.Order'
+          $ref: '#/definitions/order-service_internal_model.Order'
         type: array
       page:
         example: 1
@@ -170,7 +170,7 @@ definitions:
         example: 100
         type: integer
     type: object
-  github_com_my-org_order-service_internal_model.OrderStatistics:
+  order-service_internal_model.OrderStatistics:
     properties:
       cancelled_orders:
         example: 50
@@ -188,7 +188,7 @@ definitions:
         example: 1000
         type: integer
     type: object
-  github_com_my-org_order-service_internal_model.Response:
+  order-service_internal_model.Response:
     properties:
       code:
         example: 0
@@ -198,7 +198,7 @@ definitions:
         example: success
         type: string
     type: object
-  github_com_my-org_order-service_internal_model.UpdateOrderStatusRequest:
+  order-service_internal_model.UpdateOrderStatusRequest:
     properties:
       status:
         enum:
@@ -278,15 +278,15 @@ paths:
           description: OK
           schema:
             allOf:
-            - $ref: '#/definitions/github_com_my-org_order-service_internal_model.Response'
+            - $ref: '#/definitions/order-service_internal_model.Response'
             - properties:
                 data:
-                  $ref: '#/definitions/github_com_my-org_order-service_internal_model.OrderListResponse'
+                  $ref: '#/definitions/order-service_internal_model.OrderListResponse'
               type: object
         "400":
           description: Bad Request
           schema:
-            $ref: '#/definitions/github_com_my-org_order-service_internal_model.ErrorResponse'
+            $ref: '#/definitions/order-service_internal_model.ErrorResponse'
       security:
       - BearerAuth: []
       summary: 获取订单列表
@@ -302,7 +302,7 @@ paths:
         name: order
         required: true
         schema:
-          $ref: '#/definitions/github_com_my-org_order-service_internal_model.CreateOrderRequest'
+          $ref: '#/definitions/order-service_internal_model.CreateOrderRequest'
       produces:
       - application/json
       responses:
@@ -310,15 +310,15 @@ paths:
           description: Created
           schema:
             allOf:
-            - $ref: '#/definitions/github_com_my-org_order-service_internal_model.Response'
+            - $ref: '#/definitions/order-service_internal_model.Response'
             - properties:
                 data:
-                  $ref: '#/definitions/github_com_my-org_order-service_internal_model.Order'
+                  $ref: '#/definitions/order-service_internal_model.Order'
               type: object
         "400":
           description: Bad Request
           schema:
-            $ref: '#/definitions/github_com_my-org_order-service_internal_model.ErrorResponse'
+            $ref: '#/definitions/order-service_internal_model.ErrorResponse'
       security:
       - BearerAuth: []
       summary: 创建订单
@@ -342,15 +342,15 @@ paths:
           description: OK
           schema:
             allOf:
-            - $ref: '#/definitions/github_com_my-org_order-service_internal_model.Response'
+            - $ref: '#/definitions/order-service_internal_model.Response'
             - properties:
                 data:
-                  $ref: '#/definitions/github_com_my-org_order-service_internal_model.Order'
+                  $ref: '#/definitions/order-service_internal_model.Order'
               type: object
         "404":
           description: Not Found
           schema:
-            $ref: '#/definitions/github_com_my-org_order-service_internal_model.ErrorResponse'
+            $ref: '#/definitions/order-service_internal_model.ErrorResponse'
       security:
       - BearerAuth: []
       summary: 获取订单详情
@@ -374,19 +374,19 @@ paths:
           description: OK
           schema:
             allOf:
-            - $ref: '#/definitions/github_com_my-org_order-service_internal_model.Response'
+            - $ref: '#/definitions/order-service_internal_model.Response'
             - properties:
                 data:
-                  $ref: '#/definitions/github_com_my-org_order-service_internal_model.Order'
+                  $ref: '#/definitions/order-service_internal_model.Order'
               type: object
         "400":
           description: Bad Request
           schema:
-            $ref: '#/definitions/github_com_my-org_order-service_internal_model.ErrorResponse'
+            $ref: '#/definitions/order-service_internal_model.ErrorResponse'
         "404":
           description: Not Found
           schema:
-            $ref: '#/definitions/github_com_my-org_order-service_internal_model.ErrorResponse'
+            $ref: '#/definitions/order-service_internal_model.ErrorResponse'
       security:
       - BearerAuth: []
       summary: 取消订单
@@ -408,7 +408,7 @@ paths:
         name: status
         required: true
         schema:
-          $ref: '#/definitions/github_com_my-org_order-service_internal_model.UpdateOrderStatusRequest'
+          $ref: '#/definitions/order-service_internal_model.UpdateOrderStatusRequest'
       produces:
       - application/json
       responses:
@@ -416,19 +416,19 @@ paths:
           description: OK
           schema:
             allOf:
-            - $ref: '#/definitions/github_com_my-org_order-service_internal_model.Response'
+            - $ref: '#/definitions/order-service_internal_model.Response'
             - properties:
                 data:
-                  $ref: '#/definitions/github_com_my-org_order-service_internal_model.Order'
+                  $ref: '#/definitions/order-service_internal_model.Order'
               type: object
         "400":
           description: Bad Request
           schema:
-            $ref: '#/definitions/github_com_my-org_order-service_internal_model.ErrorResponse'
+            $ref: '#/definitions/order-service_internal_model.ErrorResponse'
         "404":
           description: Not Found
           schema:
-            $ref: '#/definitions/github_com_my-org_order-service_internal_model.ErrorResponse'
+            $ref: '#/definitions/order-service_internal_model.ErrorResponse'
       security:
       - BearerAuth: []
       summary: 更新订单状态
@@ -446,10 +446,10 @@ paths:
           description: OK
           schema:
             allOf:
-            - $ref: '#/definitions/github_com_my-org_order-service_internal_model.Response'
+            - $ref: '#/definitions/order-service_internal_model.Response'
             - properties:
                 data:
-                  $ref: '#/definitions/github_com_my-org_order-service_internal_model.OrderStatistics'
+                  $ref: '#/definitions/order-service_internal_model.OrderStatistics'
               type: object
       security:
       - BearerAuth: []

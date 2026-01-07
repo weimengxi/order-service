@@ -5,9 +5,9 @@ import (
 	"os"
 
 	"github.com/gin-gonic/gin"
-	"github.com/my-org/order-service/internal/config"
-	"github.com/my-org/order-service/internal/handler"
-	"github.com/my-org/order-service/internal/router"
+	"order-service/internal/config"
+	"order-service/internal/handler"
+	"order-service/internal/router"
 
 	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"

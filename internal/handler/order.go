@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	"github.com/my-org/order-service/internal/model"
+	"order-service/internal/model"
 )
 
 // 模拟订单数据存储
